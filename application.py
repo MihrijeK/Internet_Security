@@ -39,3 +39,29 @@ def uploadd():
 
         )
         print(r.text)
+    
+window = Tk()
+window.title("Ngarkimi i fajllave ne Google Drive")
+window.geometry('450x150')
+window.configure(bg='#1569C7')
+
+
+def helpp():
+    messagebox.showinfo("Help", "Zgjedh Upload dhe vendos nje file ")
+
+
+menubar = Menu(window)
+filemenu = Menu(menubar, tearoff=0)
+filemenu.add_command(label="Upload", command=upload)
+filemenu.add_command(label="Exit", command=window.quit)
+menubar.add_cascade(label="File", menu=filemenu)
+
+helpmenu = Menu(menubar, tearoff=0)
+helpmenu.add_command(label="Help", command=helpp)
+menubar.add_cascade(label="Help", menu=helpmenu)
+window.config(menu=menubar)
+window.mainloop()
+menubar = Menu(window)
+filemenu = Menu(menubar, tearoff=0)
+menu = Menu(menubar, tearoff=0)
+filemenu.add_command(label="Upload", command=upload)
