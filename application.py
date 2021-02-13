@@ -89,12 +89,43 @@ def openfile():
             headers=headers,
             files=files
         )
+        print("Dokumenti " + os.path.basename(name) + " u be  upload ne Google Drive")
+        print(r.text)
+        messagebox.showinfo("Upload", "Dokumenti u ruajt me sukses")
 
+    else:
+        error("Gabim ", "Ju lutem shkruani Access Tokenin dhe Folderin e duhur")
 
+#krijimi i funksionit help qe na jep nje informacion ndihmes rreth perdorimit te aplikacionit
+def help():
+
+    messagebox.showinfo("Help", "Zgjedh Upload dhe vendos file")
+
+#krijimi i funksionit exitt qe mundeson mbylljen e aplikacionit
+def exitt():
+    messagebox.showinfo("Exit", "Aplikacioni u mbyll")
+    window.destroy()
+
+#krijimi i menubar
+menubar = Menu(window)
+
+#krijimi i filemenu dhe  i komandave te saj
+filemenu = Menu(menubar, tearoff=0)
+filemenu.add_command(label="Upload", command=upload)
+filemenu.add_command(label="Exit", command=exitt)
+menubar.add_cascade(label="File", menu=filemenu)
+
+#krijimi i helpmenu  dhe  i komandes te saj
+helpmenu = Menu(menubar, tearoff=0)
+helpmenu.add_command(label="Help", command=help)
 menubar.add_cascade(label="Help", menu=helpmenu)
+
+#vendosja e menus ne dritare
 window.config(menu=menubar)
-window.mainloop()
 menubar = Menu(window)
 filemenu = Menu(menubar, tearoff=0)
 menu = Menu(menubar, tearoff=0)
-filemenu.add_command(label="Upload", command=upload)
+
+window.mainloop()
+
+
