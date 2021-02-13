@@ -27,13 +27,44 @@ Pas ekzekutimit te aplikacionit do te na shfaqet dritarja e krijuar dhe meny-ja 
  
 Ne momentin qe klikojm ne file menu do na shfaqen dy opsionet e saj Upload dhe Exit
 ![](img/img2.png)
+
 Kur zgjedhim opsionin Upload shfaqen dy fusha te cilat perdoruesi duhet t’i plotesoj.Ne fushen e pare duhet te vendos access tokenin per qasjen ne Google Drive dhe ne fushen e dyte folderin specifik ku deshiron ta ruaj fajllin qe e zgjedh .
 ![](img/img3.png)
 ![](img/img4.png)
+
 Per te marre access tokenin e Google Drive .Perdoruesi duhet te hap linkun https://developers.google.com/oauthplayground/  te selektoj Drive APIv3 dhe te autorizoj API-ne.
 ![](img/img5.png)
 
 Perdoruesi pas aplikimit te ketyre hapave pranon access tokenin e tij i cili do te vlej per nje kohe te caktuar nga google .
+
 ![](img/img6.png)
-Per te shenuar folderin ne te cilin perdoruesi deshiron ta ruaj fajllin e zgjedhur duhet qe te merr ID-ne perkatese te atij folderi .
+
+ Per te shenuar folderin ne te cilin perdoruesi deshiron ta ruaj fajllin e zgjedhur duhet qe te merr ID-ne perkatese te atij folderi .
+
 ![](img/img7.png)
+
+Kur perdoruesi shtyp butonin Upload nese te dhenat e shenuara nuk jane valide 
+shfaqet ky mesazh :
+![](img/img18.png)
+
+Ndersa nese access token dhe ID e folderit jane valide atehere perdoruesit i shfaqet kerkesa per ta zgjedhur fajllin e percaktuar .(Perdoruesi mund te zgjedh vetem fajllat te cilet kane ekstension .doc, .docx, .xls, .xlsx .  )
+![](img/img13.png)
+
+
+Pas zgjedhjes se fajllit perdoruesit i shfaqet mesazhi se dokumenti u ruajt me sukses.
+
+![](img/img9.png)
+
+![](img/img15.png)
+
+Nese perdoruesi zgjedh help meny-ne i shfaqet opsioni Help i saj .
+![](img/img10.png)
+
+Pas zgjedhjes se opsionit Help perdoruesit i shfaqet  nje mesazh informacioni rreth perdorimit te aplikacionit.
+![](img/img11.png)
+
+Nese perdoruesi deshiron ta mbyll aplikacionin atehere ai mund te zgjedh opsionin Exit te file menys-se .
+![](img/img12.png)
+
+Pas shtypjes se opsionit Exit perdoruesit do i shfaqet mesazhi qe ka zgjedhur te mbyll aplikacionin dhe aplikacioni do mbyllet .
+![](img/img14.png)
