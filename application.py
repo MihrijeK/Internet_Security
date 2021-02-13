@@ -58,9 +58,10 @@ def upload():
 
 #krijimi i funksionit openfile
 def openfile():
-
+    token = token_var.get()
+    folder = folder_var.get()
     #kontrollojm nese tokeni i vendosur eshte gabim
-    if  token.startswith("ya29.") :
+    if token.startswith("ya29.") and len(token)!=0 and len(folder)!=0:
 
         # krijimi i nje variable filepath e cila permban specifikat e file te zgjedhur nga perdoruesi
         filepath = filedialog.askopenfilename(
