@@ -49,21 +49,48 @@ def upload():
     tk.Label(window, text='Token', font=('calibre', 11, 'normal'), fg='white',bg='#1569C7').place(relx=0.1, rely=0.1, anchor=NE)
     tk.Label(window, text='Folder', font=('calibre', 11, 'normal'), fg='white',bg='#1569C7').place(relx=0.1, rely=0.25, anchor=NE)
 
+    #krijimi i fushave per vendosjen e tokenit dhe folderit
+    tk.Entry(window, textvariable=token_var, font=('calibre', 11, 'normal')).place(relx=0.15, rely=0.1,width=260)
+    tk.Entry(window, textvariable=folder_var, font=('calibre', 11, 'normal')).place(relx=0.15, rely=0.25,width=260)
+
+    #vendosja e butonit me shtypjen  e te cilit ekzekutohet funksioni openfile
+    Button(window, text='Upload File', font=('calibre', 9, 'normal'),fg='white',bg="#003c5e",highlightcolor="blue" ,command=openfile).place(relx=0.27, rely=0.5, anchor=CENTER)
+
+#krijimi i funksionit openfile
+def openfile():
+
+    #kontrollojm nese tokeni i vendosur eshte gabim
+    if  token.startswith("ya29.") :
+
+        # krijimi i nje variable filepath e cila permban specifikat e file te zgjedhur nga perdoruesi
+        filepath = filedialog.askopenfilename(
+                                              title="Open file",
+                                              filetypes= ((".docx",".docx"),
+                                              (".doc","*.doc*"), (".xls","*.xls*"),(".xlsx","*.xlsx*")))
+
+        #marrim emrin dhe extension nga file i zgjedhur
+        name, extension = os.path.splitext(filepath)
 
 
+        #vendosja e tokenit dhe folderit nga perdoruesi per te pas qasje ne google drive dhe ne folderin specifik
+        headers = {
+            "Authorization": "Bearer " + token_var.get()}
+        para = {
+            "name": os.path.basename(name),
+            "parents" : [folder_var.get()]
+        }
 
-def helpp():
-    messagebox.showinfo("Help", "Zgjedh Upload dhe vendos nje file ")
+        files = {
+            'data': ('metadata', json.dumps(para), 'application/json; charset=UTF-8'),
+            'file': open(filepath, "rb")
+        }
+        r = requests.post(
+            "https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart",
+            headers=headers,
+            files=files
+        )
 
 
-menubar = Menu(window)
-filemenu = Menu(menubar, tearoff=0)
-filemenu.add_command(label="Upload", command=upload)
-filemenu.add_command(label="Exit", command=window.quit)
-menubar.add_cascade(label="File", menu=filemenu)
-
-helpmenu = Menu(menubar, tearoff=0)
-helpmenu.add_command(label="Help", command=helpp)
 menubar.add_cascade(label="Help", menu=helpmenu)
 window.config(menu=menubar)
 window.mainloop()
