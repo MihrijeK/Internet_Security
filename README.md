@@ -18,7 +18,13 @@ Si fillim per te zhvilluar kete aplikacion ne kemi instaluar keto package:
 ![](img/img20.png)
 ![](img/img21.png)
 # 3.Ekzekutimi i Aplikacionit
+Ekzekutimi mund të bëhet duke e bërë run projektin në njërin nga editor-ët, në rastin e mëposhtëm është përdorur PyCharm:
+
 ![](img/img17.png)
+
+Programi mund të ekzekutohet edhe duke hapur terminalin ne direktotriumin e projektit dhe duke shkruajtur komandën si në vijim:
+
+![](img/img16.png)
 
 # 4.Testimet
 
@@ -28,7 +34,7 @@ Pas ekzekutimit te aplikacionit do te na shfaqet dritarja e krijuar dhe meny-ja 
 Ne momentin qe klikojm ne file menu do na shfaqen dy opsionet e saj Upload dhe Exit
 ![](img/img2.png)
 
-Kur zgjedhim opsionin Upload shfaqen dy fusha te cilat perdoruesi duhet t’i plotesoj.Ne fushen e pare duhet te vendos access tokenin per qasjen ne Google Drive dhe ne fushen e dyte folderin specifik ku deshiron ta ruaj fajllin qe e zgjedh .
+Kur zgjedhim opsionin Upload shfaqen dy fusha te cilat perdoruesi duhet t’i plotesoj.Ne fushen e pare duhet te vendos access tokenin per qasjen ne Google Drive dhe ne fushen e dyte folderin specifik ku deshiron ta ruaj fajllin qe e zgjedh.
 ![](img/img3.png)
 ![](img/img4.png)
 
